@@ -1,0 +1,40 @@
+Scrivere nell'immagine
+    ° addText(canvas, x1,y1,"Ciao mondo Python")
+
+Aggiungere un rettangolo all'immagine
+    ° addRect(canvas, x1, y1, 40, 40, black)
+
+Aggiungere una linea
+    ° addLine(canvas, 10, 20, 300,50,makeColor(255,0,0))
+
+Aggiungere un rettangolo vuoto
+    ° addRect(canvas, 10, 100, 290, 490)
+
+Aggiungere un rettangolo con un colore
+° addRectFilled(canvas, 100, 210, 290, 490, yellow)
+
+Ottenere un immagine vuota di w,h e di un colore diverso dal bianco passare il 3°parametro color
+° makeEmptyPicture(w,h,c)
+
+
+Esercizio per disegnare una diagonale nell'immagine, (diagonale principale):
+    Se l'immagine ha una larghezze e un'altezza uguali, 100x100
+    allora basta quest'algoritmo per risolvere il problema:
+        for x in range(0,getWidth(p)):
+            for y in range(0,getHeigth(p)):
+                if x == y:
+                    setColor(getPixel(p,x,y), makeColor(0,0,0))
+
+Mentre se l'immagine non ha altezza e larghezza uguale quindi w != da h possiamo usare quest'algoritmo:
+ Non è perfetta ma è questo l'intento
+ _____
+|\    |
+| \   |      Iteriamo sulle colonne,
+|  \  |      ipostiamo questo rapporto poichè lavoriamo con i pixel dobbiamo avere interi e non decimali
+|   \ |
+|____\|
+                for x in range(0,getWidth(p)):
+                    y= getHeight(p) * x // getWidth(p)
+                    setColor(getPixel(p,x,y), makeColor(0,0,0))
+
+                Per ottenere lo stesso risultato

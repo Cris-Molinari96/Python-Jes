@@ -1,0 +1,68 @@
+Vogliamo fare chiarezza su alcune funzioni predefinite di Jython
+
+- `pickAFile()` --> seleziona un file immagine e ritorna una stringa ovvero il percorso del file.
+- `makePicture(filename)`: Crea un oggetto Picture una Picture è una matrice bidimensionale.
+- `show()` --> Mostra un'immagine
+- `getPixel(picture, x, y)`: Ottiene un pixel specifico
+- `getPixels(picture)`: Ottiene tutti i pixel di un'immagine
+- `getColor(pixel)`: Ottiene il colore di un pixel
+- `getRed(pixel)`, `getGreen(pixel)`, `getBlue(pixel)`: Ottengono i valori RGB di un pixel
+- `setColor(pixel, color)`: Imposta il colore di un pixel
+- `setRed(pixel, value width, height)`, `setGreen(pixel, value larghezza, value )`, `setBlue(pixel, value)`: Impostano i valori RGB di un pixel
+
+
+
+Modificare un immagine:
+    per farlo dobbiamo ovviamente aver ben chiaro il passaggio di cui sopra definite le funzioni come creare un oggetto Picture,
+
+    picture = makePicture(pickAFile()) --> crea un oggetto picture a partire dal selezionare un file immagine, restituisce un immagine
+     mentre la funzione pickAFile accetta come parametro una stringa ovvero un percorso.
+
+        Poniamo attenzione a questo dettaglio perché quello che accade è che viene creato un oggetto python di tipo Picture,
+        e copiati e trasferiti i byte dell'immagine selezionata con pickAFile in questo file/oggetto che poi viene caricato in RAM ed accessibile per
+        eventuali modifiche o anche per la visualizzazione ed è chiò che abbiamo fatto nell'esericizio richiamando poi show che ci mostra il file.
+        Picture è un oggetto python di alto livello ci permette attraverso questi passaggi di manipolare e gestire il file.
+        Perché accade questo, ovvero la creazione dell'oggetto python? Perché questa è una struttura che il linguaggio python può comprendere e gestirlo.
+        Vengono descritte informazioni di altezza height, larghezza width, di pixel e profondità di colore dell'immagine.
+        Questo file poi quando caricato nella RAM può essere gestito dalla CPU per poter interagire sui singoli pixel, colori e dimensioni. 7
+        Ovviamente ci sono altre funzioni che ci permettono di fare questo.
+        Concludendo che questo processo di caricamento in RAM non si limita a copiare i byte in modo grezzo, ma organizza i dati dell'immagine in una
+        struttura che rende semplice e veloce accedervi dalla CPU.
+
+    Per entrare nel vivo della modfica dobbiamo accedere ai singoli pixel dell'oggetto immagine, il file di testo spiegazione-1
+    fà chiarezza nel dettaglio ora vogliamo richiamare solo alune nozioni.
+
+        Possiamo farlo attraverso le funzioni:
+        1. getPixel() --> che vuole un oggetto Picture e la posizione specifica del pixel(x,y)
+            ottenuto per ogni iterazione il pixel possiamo farci qualsiasi cosa
+
+
+
+Struttura dei pixel:
+    - Ogni pixel ha 3 componenti di colore: Rosso, Verde, Blu.
+    Ottenendo un singolo pixel con get Pixel possiamo accedervi a tali componenti e modificarli
+    Recuperare i valori del pixel con getRed(pixel), getGreen(pixel), getBlue(pixel).
+    Per modificarli setRed(pixel, nuovo valore di rosso), setGreen(pixel, nuovo valore di verde), setBlue(pixel, nuovo valore di blu)
+
+** Quanti pixel ci sono nell'immagine?
+ I pixel complessivi dell'immagine vengono definiti dalla somma di getHeight(pic) + getWidth(pic)
+
+
+
+Nella elaborazione delle immagini:
+x si muove orizzontalmente (→) e ___rappresenta le colonne___.
+y si muove verticalmente (↓) e ___rappresenta le righe___.
+
+Matrice    (x,y) _ (4,1)
+     _________________ x
+    |0 1 2 3 4
+    |1 1 1 1 1
+    |2 2 2 2 2
+    |3 3 3 3 3
+    y
+
+
+
+
+
+

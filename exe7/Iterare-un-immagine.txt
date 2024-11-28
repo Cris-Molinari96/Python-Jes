@@ -1,0 +1,33 @@
+
+Vuole chiarire ogni dubbio su come si accedere a parti dell'immagine
+
+
+                   per dividere l'immagine verticalemente in due parti
+                                usiamo la fuzione getWidth(p)/2
+                     _________________________________________   X
+                    |0                  50                100 |  --> per Accedere all'ultimo valore della
+                    |                                         |      riga usiamo la funzione getWidth(p)-1
+                    |                                         |
+                    |                                         |
+                    |                                         |
+per dividere        |50                                       |
+orizzontalmente     |                                         |
+l'immagine usiamo   |                                         |
+la fuzione          |                                         |
+getHeight(p)/2      |                                     100 | --> per accere all'utlimo valore della colonna
+                    |_________________________________________|     usiamo la funzione getHeight(p)-1
+                   Y
+
+                   °accedi alla prima colonna quindi x = 0 getWidth(pic)
+                   °accedi alla prima riga quindi y = 0 getHeight(pic)
+                   °accedi all'ultima colonna quindi x = 100 getWidth(p)-1 ( in un for ci spostiamo da destra verso sinistra)
+                   °accedi all'ultima riga quindi y = 100 getHeight(p)-1 (in un for si spostiamo dall'basso verso l'alto)
+
+                   °accedi all'ultima colonna dell'ultima riga quindi x = 100, y = 100
+                   getWidth(pic) -1 e getHeight(pic)-1
+
+
+
+
+
+

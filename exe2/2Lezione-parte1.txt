@@ -1,0 +1,33 @@
+• cap. 2: par. 2.1, 2.2, 2.3
+• cap. 5: par. 5.1, 5.2, 5.3
+
+La secondo lezione vuole concentrarsi sulle funzioni:
+Una funzione è un oggetto in python.
+Le funzioni sono istruzioni che vengono eseguite solo quando la funzione viene incovata, le istruzioni vengono raccolte
+nel corpo di una funzione, in generale il corpo e delimitato da parentesi { } le quali indicano l'apertura o la chiusura della funzione.
+In Python le funzioni si definiscono con il comando def, mentre il corpo di una funzione ha inizio subito dopo i :
+
+Dev'essere chiaro che lo scopo delle funzioni è:
+    Riutilizzare il codice per evitare duplicazioni e che devono fare una sola cosa!
+
+                    def fun():
+                        print "ciao!"
+
+Esistono diversi tipi di funzioni e possiamo classificarle:
+1. funzioni predefinite come print() len() fornite dal linguaggio
+2. funzioni definite dall'utente
+3. funzioni ricorsive: ovvero funzioni che chiamano sè stesse
+4. funzioni con parametri
+    - parametri posizionali: devono essere inseriti rispettivamente nell'esatta posizione dei parametri --> def fun(nome,indirizzo):
+    - parametri di default: in assenza di quel parametro usa il parametro 10 --> def fun(n=10):
+    - non viene indicato un numero preciso di parametri: --> def fun(*args):
+        *args, tutti i parametri vengono inseriti in una tupla.
+
+5. funzioni componibili: ovvero che ritornano qualcosa -->
+        def fun(a,b):
+            return a+b
+
+Accenniamo che nelle funzioni è possibile utilizzare variabili globali, creare localmente variabili,
+e modificare tipi di dato sul posto come liste o in generali dati mutabili, faremo distinzione nelle lezioni successive tra i diversi
+tipi di dato per ora introduciamo i dati mutabili e non mutabili.
+

@@ -1,0 +1,49 @@
+Gli esercizi proposti vogliono farci capire come è possibile anzitutto creare un oggetto di tipo Picutre attraverso funzioni predefinite
+le quali ritornano un oggetto bidimensionale, ottenere una lista di pixels getPixels(pic), accedere ai singoli pixel in modi diversi
+secondo un problema dato, utilizzare algoritmi per modificare le quantità di colore di un immagine.
+
+ ••• Libro consigliato: Concetti d'informatica e fondamenti di Python
+cap. 1: par. 1.1, 1.2, 1.3, 1.7 •••
+
+sunsetVarianteGerarchica():
+Invoca altre 3 funzioni le quali accedendo ai pixel della matrice incrementano o decrementato la quantità di
+un componente.
+Rispetto a quest'argomento possiamo una modalità di accesso ai pixel una molto più rapida:
+
+- px sono effettivamente i pixel della matrice
+
+            for px in getPixels(picture):
+                setColor(px, getRed() * n)
+
+Picture è un oggetto bidimensionale in Python, rappresenta una matrice di pixel accessibile tramite cicli.
+
+
+Accesso ai Piexl in modi diversi secondo il problema presentato:
+Il più idoeno per accedere a colonne e righe è quest'algoritmo:
+Con queste istruzioni accediamo ai singoli pixel iterando prima i pixel delle colonne e poi i pixel delle righe:
+il processo consiste nell'accedere alla riga 1.
+
+range() ci permette, dati 1:3 parametri in ingresso di partire da un valore iniziale e arrivare ad un valore finale per
+scansionare la lista di pixel range(start,end, step) il 3° parametro permette di fare uno step di n valore
+
+1)
+        for x in range(0,getWidth(picture)):
+            for y in range(0,getWidth(picture)):
+                px = getPixel(picture,x,y) --> #Recuperiamo un pixel in una posizione specifica e possiamo fare qualsiasi cosa
+                    if getRed(px) == getBlue(px) + getGreen(px):
+                        print x,y --> #Stamperà la posizione le pixel
+
+2)
+        for px in listPixels:
+            r = getRed(px)
+            g = getGreen(px)
+            b = getBlue(px)
+
+
+
+funzioni e keyword viste:
+range(): Genera una sequenza di numeri.
+len(): Restituisce la lunghezza di una sequenza.
+def: Definisce una funzione.
+return: Restituisce un valore da una funzione.
+

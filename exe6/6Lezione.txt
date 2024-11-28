@@ -1,0 +1,132 @@
+Lezione 6:
+    cap. 5: par. 5.2, 5.3, 5.4, 5.6, 5.7, 5.8
+
+Concetti fondamentali:
+- Una funzione è un oggetto in python, per altri dettagli dir exe2
+- Operatore di assegnazione,
+- Riferimento,
+- NameSpace global e locale(funzioni),
+- Dati mutabili e immutabili,
+- funzioni componibili(return)
+
+Operatore di assegnazione --> =
+
+    1. Quando l'operatore viene eseguito ciò che succede è che dietro le quinte si crea un oggetto (se non c'è già) con quel nome
+    che abbiamo definito e per tanto lo si fà riferire a quello oggetto che diventa il valore associato di quell'oggetto.
+    Il riferimento è la posizione in memoria dove è contenuto quel valore, quando diciamo che viene copiato il riferimento
+    intendiamo dire la posizione in memoria.
+
+    2. Nomi diversi possono essere fatti riferire a quel determinato valore
+
+    Se x=10  --> si crea un oggetto x con quel valore 10 questo oggetto è una cella di memoria che ha quel valore.
+    e y=x    --> y ora sta puntando a quella cella recuperando il valore di x quando necessario.
+
+
+    Ora modificando il valore di x non ha effetto su y ma se modificassimo il valore di x prima di assegnare a y il valore di x
+    allora punterebbe al nuovo valore.
+    Questo accade perché con l'operatore di assegnazione viene creato un nuovo riferimento e quindi una nuova posizione
+    nella memoria che contiene il nuovo valore, il vecchio riferimento non viene eliminato altrimenti avremmo una y null.
+
+    Consideriamo che anche una funzione accetta dei parametri in input i quali possono essere associati ad un valore
+    ad esempio:
+        def qualcos(a=3, b=a) questi due parametri stanno puntando allo stesso valore quindi sono riferimenti allo stesso valore
+        ed è analogo a quello che abbiamo appena detto, [parametri formali], questi parametri esistono solo all'interno della
+        funzione esempio di clearX,
+        è chiaro che assegnare nuovamente un parametro formale all'interno della funzione distrugge il riferimento mà solo all'interno
+        della funzione la variabile assume quel valore e non viene modificato esternamente
+
+            Esempio:
+            x = 200
+
+            def clearX(x):
+              print x --> 200
+              x = 0 --> Localmente stiamo creanod un nuovo riferimento, per localmente intendiamo solo all'interno della funzione
+              y = x
+              print x --> 0
+              print y --> 0
+
+            print x --> 200
+            clearX(x) -->
+            print x --> 200
+
+            I dati immutabili in Python sono i tipi Primitivi come Stringhe, Interi, booleani, tuple.
+
+        Mentre una funzione che và a settare il colore blu a 0 di un immagine, questa modifica fatta è in modo permanente questo
+        perché Python distingue tipi di dato in:
+
+        *** Mutabili:
+            Quelli mutabili sono liste, immagini, valori di dizionari
+                • ogni elemento del loro dominio è scomponibile in “porzioni” più piccole"
+            • ogni singola “porzione” : PUO’ essere acceduta per conoscerne il valore e
+            PUO’ essere modificata “sul posto!” modificando l’oggetto (elemento del dominio) di cui fa parte.
+
+        *** Non mutabili:
+            i tipi non mutabili sono stringhe e numeri quindi (int,float, double) e booleani e anche se le stringhe sono
+            scomponibili in porzioni più piccole possiamo conoscerne il valore ma non possiamo modicarlo sul posto c'è solo una
+            possibilità per cambiargli il valore utilizzare l'operatore di assegnamento e assegnargli un nuovo valore in modo che
+            venga creato un nuovo riferimento ad un nuovo valore.
+
+        Come già sai una picture è scomponibile in porzioni più piccole esserendo una matrice di pixel le porzioni più piccole
+        sono proprio i pixel infatti è possibile accedere ai pixel attraverso funzioni specifiche come getPixels() getPixel()
+        i pixel contengono informazioni accessibili come getColor(), getRed(), getBlue(), getGreen() e settabili.
+
+
+
+°°° Funzioni componibili:
+        queste funzioni possono essere innestate una dentro l'altra dove l'output di una funzione diventa
+        l'input di un'altra makePicture(pickAFile()) la caratteristica principale delle funzioni componibili la keyword return e
+        quindi restituire qualcosa.
+        Le funzioni che non ritornano un output e quindi che non fanno uso di return, non sono componibili.
+
+        Le funzioni (su immagini) definite finora lavorano per effetto collaterale (side effect) su oggetti mutable passati come
+        parametri attuali come decreaseRed che gli passiamo un immagine per ridurre il rosso o tante altre che ne abbiamo fatte..
+
+
+NameSapce e contesto in relazione tra di loro:
+    Global context o globalScope ovvero che nomi definiti nel global posso essere usati ovunque ed è possibile
+    usare lo stesso nome di una variabile globale all'interno di una funzione, questo non cambierà comunque il valore della variabile
+    globale perché ogni chiamata a una funzione crea un nuovo nameSpace un nuovo riferimento che viene usato solo quando la funzione viene
+    invocata.
+
+° NameSpace?!?!
+    Immagina il nameSapce come uno spazio globale dove ci sono determinate variabili che assegnate a un valore
+    e invece il nameSpace strettamente relativo a funzioni che se richiamate creano un nuovo namespace
+    (e quindi queste variabili seppure hanno lo stesso nome puntano a spazi diversi analogamente hanno riferimenti diversi)
+    distinguendo uno spazio globale e uno spazio delle funzioni.
+
+In sintesi possiamo utilizzare variabili globalmente definite nel globalScope e localmente quelle definite nelle funzioni.
+- Il namespace golbale è un insieme contente tutti i nomi globali
+- il namespace locale è l'insieme dei nomi definiti localmente come nelle funzioni
+
+Una variabile globale rimane tale se non viene riassegnata sia nel globalScope o nel localScope nel local
+esisterà quel valore solo se richiamata la funzione.
+
+Occhio al comando global che modifica la variabile globalmente
+In Python, i tipi immutabili (come interi, stringhe e tuple) non possono essere modificati "sul posto";
+ogni operazione che "modifica" il valore effettivamente crea un nuovo oggetto.
+Tuttavia, l'uso di global permette a una funzione di riassegnare la variabile immutabile a un nuovo valore a livello globale.
+
+
+Attenzione anche a saper riconoscere gli errori:
+
+    a = 10
+
+    def func_1():
+        print a
+
+    def func_4(x):
+        a=a+3     ----> Questo è un errore python sollverà
+                        un errore in quanto a non è stata definita nessuna variabile localmente di nome a ovvero non è stato creato
+                        un nameSpace che contiene quel riferimento e per tanto l'interprete vorrà usare il riferimento di a globale
+                        mà per farlo dovremmo soltato passare il parametro alla funzione.
+        a=2
+        y=x+10
+        func_1()
+        func_4(7)
+
+Concludiamo dicendo che:
+    Per quanto riguarda i modi possibili di scrivere una funzione sono 2 una prevedendo un return il cui valore può essere
+    assgnato ad una variabile e una senza un return.
+
+Che cosa rende una funzione generale e quindi riusabile?
+    • Una funzione riusabile fà Una e Una Sola Cosa

@@ -1,0 +1,38 @@
+
+                                 Immagine più piccola:
+
+                                 La funzione necessita di parametri di(xMin e yMin), i 2 parametri definiscono la posizione nella quale
+                                 l'immagine più piccola dev'essere copiata, non c'è bisogno di un xMax e yMax vogliamo tutta l'immagine piccola
+
+                                 Quindi Iteriamo sull'img più piccola accendo ai pixel
+                                 - assumiamo che xMin=0, yMin=0
+
+                                 def x in range(0,getWidth(p)):
+                                    def y in range(0,getHeight(p)):
+                                        x = 0
+                                        xG = xMin + x per la prima iterazione siamo a 0, 0 e quindi inzia a copiare nel punto dell'immagine
+                                        più grande di x = 0 similmenete per
+                                        yG= yMin + 0
+
+                                        La xG andarà tra un range di 0 e n, n è l'ultimo valore di x e l'utilo valore di y
+                                  ____________________________
+                                 |0                           |
+                                 |                            |
+                                 |                            |
+                                 |                            |
+                                 |                            |
+                                 |                            |
+                                 |____________________________|
+
+                                  Immagine più grande:
+                                  ______________________________________________________________
+                                 |0                           |                                 |
+                                 |                            |                                 |
+                                 |                            |                                 |
+                                 |                            |                                 |
+                                 |                            |                                 |
+                                 |                            |                                 |
+                                 |                            |                                 |
+                                 |___________________________n| fine immagine                   |
+                                 |                                                              |
+                                 |______________________________________________________________|

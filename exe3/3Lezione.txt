@@ -1,0 +1,74 @@
+Start 3Lezione fondamenti:
+
+ ** Concetto di continuità, Discretizzazione, Digitalizzazione, Picutre, Pixels
+
+
+    Immagini Continue e Discrete:
+        Le immagini nel mondo reale sono continue, e il nostro cervello percepisce i colori grazie alla continuità delle
+        variazioni cromatiche questo percheé i colori reali sono continui.
+        I computer, però, non lavorano con dati continui infatti per poter rappresentare un'immagine devono essere trasformate
+        partendo da un ambiente continuo in un ambiente discreto.
+        Questo processo che chiamato __discretizzazione___, suddivide l’immagine continua in una griglia di punti singoli chiamati pixel,
+        ogni pixel rappresenta un singolo punto dell’immagine e può assumere un colore specifico in base alla combinazione delle intensità
+        dei tre colori primari: rosso, verde e blu (RGB).
+
+Discretizzazione e Digitalizzazione
+
+    Discretizzazione:
+        Trasformiamo un’immagine continua in una sequenza discreta di pixel, producendo una griglia bidimensionale.
+        Ogni pixel ha una posizione precisa nella matrice.
+
+    Digitalizzazione:
+        Convertiamo i valori dei pixel in una forma digitale.
+        In altre parole, assegniamo a ogni pixel un valore numerico che rappresenta il suo colore e che il computer può elaborare.
+        Questa digitalizzazione avviene codificando il colore di ciascun pixel come una tripla RGB, dove ogni componente può variare
+        tra 0 e 255. Questa codifica produce più di 16 milioni di combinazioni di colori,
+        dato che ogni componente ha 2^8 (256) possibili valori e quindi un pixel può rappresentare 2^24 colori.
+
+
+        In sintesi, quando rappresentiamo un'immagine con un computer, discretizziamo partizionando l'immagine in pixel,
+        e digitalizziamo assegnando a questi pixel un valore numerico che il computer può manipolare,
+        codificando quel pixel in una precisa posizione nella matrice (ad esempio nella posizione x = 10, y = 10
+        settaggio del formato setRed = 100, setGrenn = 0 , setBlue = 200 RGB)
+        sappiamo che ogni pixel è descritto da una tripla di valor interi che vanno da 0 a 255 (0,0,0) oppure (255,255,255),
+        questi valori combinati insieme definiscono il colore finale.
+        Inoltre è importante sapere che queste informzioni quando vengono digitalizzate sono una sequenza di bit,
+        cià vale a dire che una deteminata intesità di colore viene codificata in una certa sequenza di bit,
+        e inoltre dobbiamo sapere che un immagine è una matrice di Pixel in cui le proprietà principali dei pixel sono la poszione nella
+        matrice data da x e y e il colore.
+
+    Pixel = picture element
+    Ogni pixel è caratterizzato dal suo colore e dalla sua posizione nella matrice.
+    Indichiamo con x la sua posizione rispetto l'asse reale, con y la sua posizione rispetto l'asse ordinata.
+
+Operazioni sul pixel getColor e setColor:
+    ogni elemento ossia un colore all'interno della tripla può assumere 2^8 colori diversi ciò vale a dire
+    (2^8, 2^8, 2^8) definendo che un pixel può assumere 16 milioni e passa di colori diversi 2^24.
+
+    L'oggetto Picture/Immagine, questo tipo di dato può essere manipolato essendo una griglia di pixel per poterlo fare abbiamo a
+    disposizione determinate funzioni come:
+    °getPixel(pict, x, y): Restituisce il pixel che si trova alle coordinate (x, y) della Picture pict.
+    °getColor(pixel): Restituisce il colore del pixel sotto forma di tripla RGB.
+    °setColor(pixel, color): Imposta il colore del pixel con un nuovo valore RGB.
+    °getRed(pixel), getGreen(pixel), getBlue(pixel): Restituiscono rispettivamente i valori delle componenti rosso, verde e blu.
+    °setRed(pixel, value), setGreen(pixel, value), setBlue(pixel, value): Modificano singolarmente una delle componenti di colore.
+
+ inoltre la pictrue ha una dimensione  5x5 pixel, un filename
+
+Recap e domande che possiamo farci:
+1. Cos'è una Picture?
+    In Python, una Picture è un oggetto che rappresenta un’immagine digitale, otteniamo quest'oggetto attraverso il processo di
+    discretizzazione che ci permette di manipolare l'immagine e poi questa viene digitalizzata e rappresentata.
+    Questa immagine è composta da una griglia bidimensionale di piccoli elementi chiamati pixel.
+    Ogni pixel ha un colore specifico, che è determinato da tre componenti: rosso (Red), verde (Green) e blu (Blue),
+    espressi come valori numerici.
+
+2. Rappresentazione di una Picture
+    Un'immagine digitale, o Picture, è quindi formata da una matrice di pixel, dove ogni pixel è una cella della matrice che
+    contiene il colore del punto corrispondente nell'immagine.
+
+    Caratteristiche chiave:
+    Ogni pixel ha due proprietà principali:
+    Posizione: Dove si trova il pixel nella matrice, indicata dalle coordinate (x, y), dove x rappresenta la larghezza (orizzontale) e y l'altezza (verticale).
+    Colore: Rappresentato da una tripla di valori RGB.
+    Esempio: Immagina un'immagine di dimensioni 5x5 pixel. Questa immagine sarà rappresentata da una matrice di 25 pixel (5 righe e 5 colonne). Ogni pixel avrà un colore specifico, definito dai valori di rosso, verde e blu.

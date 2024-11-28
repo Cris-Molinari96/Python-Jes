@@ -1,0 +1,111 @@
+Lezione 5:
+    *Lavorare con Oggetti bidimensionali
+
+• cap. 4: par. 4.7, 4.10
+• cap. 5. par. 5.9
+
+
+
+    Per quanto riguarda le immagini, già sappiamo che un immagine in python è un oggetto chiamato Picture la quale rappresenta
+    una sequenza di pixels, (una sequenza è una collezione di elementi in questo caso di pixel),
+    per accedere ai singoli pixel per fare qualcosa dobbiamo iterare la sequenza e catturare tutti i pixels, arrivati a questo punto
+    possiamo fare diverse azioni.
+
+
+• Le matrici hanno due dimensioni (bidimensionali): larghezza (width) e altezza (height).
+• Usiamo le coordinate per specificare la posizione di un elemento: (x,y)
+
+Sè vogliamo agire solo su una determinata parte dell'immagine come facciamo?
+    La risposta è con dei cicli annidati impostando un range di minimo e massimo che si riferisce alla posizione specifica
+    sulla quale vogliamo fare qualcosa.
+
+    Esempio:
+        for x in range(xMin,xMax):   --> stiamo accedendo alla riga che ci interessa
+            for y in range(yMin,yMax): --> accediamo alla colonna che ci interessa
+                setColor(getPixel(picutre,x,y), makeColor(0,0,0))
+
+
+x = 1, y = 1,2,3,4,5,6,7 ad ogni iterazione recuperando ogni pixel della colonna 1.
+
+  Matrice 3x3
+     ______ x    °riga 1 itera su tutta la colonna  x=1  y=1,2,3 ...
+    |0 1 2 3                 for x in range ...
+    |1 1 1 1                    for y in range ...
+    |2 2 2 2
+    |3 3 3 3     °per iterare invece prima sulle righe  y=1  x=1,2,3 ...
+    y                       for y in range ...
+                                for x in range ..
+
+
+Si introduce il concetto di mirroring ovvero rispecchiamento che può essere verticale o orizzontale.
+Il punto chiave è dividere a metà l'immagine e iterare sulla metà dell'immagine.
+
+Immagine: divida a metà
+    w = getWidth(picture) / 2
+        x è la width,larghezza se la dividiamo a metà esempio se la la x la posizione massima sulla riga è
+        100 allora la metà è 50.
+        Come accediamo alla parte destra dell'immagine e quindi ai pixel della parte destra?
+
+            °La logica è iterare prima la y quindi prima le righe y=0, x compresa tra [0,50]
+                                                                       x-1 compresa tra [100,50]
+            @param p: Picture
+                for y in range(0,getHeight(p)):
+                    for x in range(getWidth(p)/2):
+                        pxSx = getPixel(p,x,y)
+                        pxDx = getPixel(p,getWidth()-1,y) # --> in questo modo accediamo ai pixel della parte destra
+                        A questo punto copiamo i pixel di destra nei pixel di sinistra
+
+                                                                       x=50
+                                         ______________________________________________________________ x=100
+                                        |                               |                              |
+                                        |      getPixel(p,x,y)          | getPixel(p,getWidth(p)-1,y)  |
+                                        |                               |                              |
+                                        |                               |                              |
+                                        |                               |                              |
+                                        |                               |                              |
+                                        |                               |                              |
+                                        |                               |                              |
+                                        |                               |                              |
+                                        |_______________________________|______________________________|
+
+
+
+
+            °Se invece vogliamo l'effetto orizzontale andiamo a divdere a metà l'altezza eccosa cosa accade:
+                La logica ora cambia andiamo ad iterare prima sulla x iterando le colonne quindi x = 0 la y è compresa tra [0,50]
+                                                                                                       e y compresa 100 <= y <= 50
+                    for x in range(0,getWidth(p)):
+                        for y in range(0,getHeight(p)/2):
+                            pxParteSopra = getPixel(p,x,y)
+                            pxParteInBasso = getPxel(p,x,getHeight(y)-1)
+                                         ______________________________________________________________
+                                        |                                                              |
+                                        |                    getPixel(p,x,y)                           |
+                                        |                                                              |
+                                        |                                                              |
+                               y = 50   |______________________________________________________________|
+                                        |                                                              |
+                                        |                                                              |
+                                        |                getPixel(p,x,getHeight(y)-1)                  |
+                                        |                                                              |
+                                        |______________________________________________________________|
+                                y = 100
+
+Esercizi proposti:
+1. Trasformare un immagine in uno specchio sia in vertiacle che in orizzontale, il passaggi ochiave è dividere
+l'immagine in 2 parti e accedere ai pixel delle due parti
+Per riuscire a fare un effetto specchio verticale considera questo hai un immagine 100x100,
+questo si traduce nel riuscire a dimezzare le righe se l'immagine è 100 dev'essere dimezzata in modo che l'altra
+venga costruita con i pixel della metà opposti ad esempio per x = 0 questo pixel in questa posizione dovrà essere
+ricopiato nella parte opposta corrispondente a x -1 e cosi per tutti i pixel.
+
+2. Ribaltare un immagine in verticale e in orizzontale, il passaggio chiavo è sempre quello di dividere
+l'immagine in due parti invertendo i colori ovvero quelli della parte sinistra vanno a destra e viceversa.
+
+3. Effetto griglia, utilizza il 3 parametro di range ovvero una variabile che incrementa in automatico ad ogni iterazione
+
+
+
+
+
+

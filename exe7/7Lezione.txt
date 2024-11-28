@@ -1,0 +1,136 @@
+## Discretizzazione, JPEG E BITMAP, grafica vettoriale ##
+
+
+In informatica, le immagini possono essere rappresentate in due principali modi: in bitmap e in grafica vettoriale.
+Nella lezione c'è modo di approfondire ciascun concetto sopra definito.
+
+
+1. Discretizzazione delle Immagini Quando rappresentiamo un'immagine reale all'interno di un computer,
+    è necessario convertire questa immagine continua in una forma che il computer possa elaborare.
+    Questo processo è noto come discretizzazione e consiste nel suddividere un’immagine continua in una griglia bidimensionale ovvero
+    una matrice di punti discreti chiamati pixel.
+    Ciascun pixel rappresenta un’area dell’immagine originale e viene descritto da una posizione specifica (coordinate x e y)
+    e da un colore, espresso tramite i valori RGB (Rosso, Verde, Blu).
+
+2. Bitmap e Rappresentazione a Pixel Una volta discretizzata:
+    Il processo: Immagine reale --> discretizzazione --> matrice di pixel denominata bitmap.
+
+    l'immagine viene rappresentata in formato bitmap. Un’immagine bitmap è costituita da una griglia di pixel,
+    dove ogni pixel ha un colore specifico (tripla di numeri interi che combinati definiscono il colore del pixel).
+    Questo metodo di rappresentazione, chiamato anche rasterizzazione, risulta particolarmente utile per fotografie e immagini con
+    dettagli complessi e sfumature.
+
+PER DEFINIZIONE --> Una rappresentazione bitmap consiste in una griglia di pixel, dove ogni pixel ha un colore specifico.
+                    Questo formato è utilizzato da file come JPEG, PNG, BMP, e GIF.
+
+Possiamo dire che JPEG è un algoritmo di compressione che traforma un immagine in formato discreto in un immagine digitalizzata ovvero un flusso di bit che vengono codificati IN BLOCCO tipicamente 8x8 pixel , non magicamente ma perchè l'immagine viene suddivisa attraverso  la trasformazione DTC e quantizzazione, i pixel nella trasformazione non vengono trattati singolarmente.
+Diciamo che il termine "digitalizza" è un po' generico; sarebbe più preciso dire che JPEG produce un'immagine compressa in un formato specifico
+
+°JPEG:
+    JPEG è il processo di compressione infatti abbiamo un immagine compressa di 8k byte mentre senza la compressione sarebbe
+    circa 3*(307 200) bytes.
+    Formati di Compressione delle Immagini Bitmap La compressione è un processo che riduce le dimensioni dei file,
+    ottimizzando l’uso dello spazio di archiviazione e facilitando la trasmissione dei dati.
+    Nei formati di immagine, la compressione si basa su algoritmi che riorganizzano o eliminano i dati ridondanti per minimizzare la
+    dimensione del file.
+    Esistono due principali tipi di compressione:
+
+        Lossless (senza perdita): La compressione lossless riduce le dimensioni dell’immagine senza perdita di informazioni.
+                                  Gli algoritmi lossless analizzano il file e trovano dei modi per rappresentare i dati in modo più
+                                  compatto, ma permettono di ripristinare i dati originali durante la decompressione.
+                                  Alcuni formati che utilizzano la compressione lossless sono:
+                                   - PNG (Portable Network Graphics): Conosciuto per preservare la qualità dell’immagine e supportare la
+                                   trasparenza, PNG è usato spesso per loghi e immagini con testo, dove la nitidezza è essenziale.
+
+                                   - GIF (Graphics Interchange Format): Limitato a una palette di 256 colori, GIF è adatto per immagini
+                                   semplici o animate e supporta la trasparenza.
+
+        Lossy(con perdita): La compressione riduce drasticamente la dimensione del file eliminando alcune informazioni considerate
+                            meno importanti per la percezione visiva.
+                            Questo tipo di compressione comporta una perdita di qualità, ma risulta efficace per ridurre la dimensione
+                            del file in modo significativo.
+                            Alcuni formati comuni che utilizzano la compressione lossy sono:
+                                - JPEG (Joint Photographic Experts Group): JPEG è uno dei formati più usati per le fotografie.
+                                Utilizza una compressione lossy basata su una trasformazione a blocchi (solitamente 8x8 pixel),
+                                seguita da un processo di quantizzazione che riduce le informazioni di dettaglio meno visibili all'occhio umano.
+                                La compressione JPEG può essere regolata per bilanciare qualità e dimensioni del file.
+
+Vantaggi e Limiti della Rappresentazione Bitmap:
+    Vantaggi: Le immagini bitmap catturano dettagli complessi e possono essere manipolate a livello di singolo pixel. Questo le rende ideali per fotografie e immagini che richiedono sfumature e dettagli intricati.
+    Svantaggi: La rappresentazione bitmap richiede un ampio spazio di archiviazione, specialmente per immagini ad alta risoluzione. Inoltre, non è scalabile senza perdita di qualità: ingrandendo l'immagine, i pixel diventano visibili, provocando sgranature.
+
+°°° Non è l'unico modo usato per rappresentare un immagine infatti abbiamo anche la based vector, grafica vettoriale:
+
+    Grafica Vettoriale: A differenza della bitmap, la grafica vettoriale non rappresenta un’immagine come una griglia di pixel,
+                        ma come una serie di istruzioni matematiche che descrivono linee, forme e colori.
+                        In un’immagine vettoriale, ogni elemento (come un cerchio o una linea) viene definito tramite formule matematiche,
+                        che specificano proprietà come la posizione, il colore e le dimensioni.
+
+                        Indipendenza dalla Risoluzione: Poiché le immagini vettoriali si basano su equazioni matematiche anziché su pixel,
+                        possono essere scalate a qualsiasi dimensione senza perdita di qualità.
+                        Questo le rende ideali per loghi, icone e grafici, che devono mantenere la qualità a prescindere dalle dimensioni.
+
+                        Struttura delle Immagini Vettoriali: Le immagini vettoriali sono composte da elementi geometrici come punti,
+                        linee e poligoni, ciascuno definito da una serie di parametri ad esempio, una linea in un’immagine vettoriale può
+                        essere descritta dalla posizione dei suoi punti iniziale e finale, dal colore e dallo spessore.
+
+        Vantaggi: Le immagini vettoriali possono essere ingrandite o ridotte senza sgranature, sono meno pesanti rispetto alle bitmap e
+        mantengono alta qualità visiva, inoltre, sono facilmente modificabili, poiché ogni elemento dell'immagine può essere separatamente
+        selezionato e trasformato.
+
+        Svantaggi: La grafica vettoriale non è ideale per rappresentare immagini complesse o con molte sfumature, come le fotografie.
+        La rappresentazione vettoriale funziona meglio per immagini con contorni netti e colori uniformi, ma perde in dettagli e realismo
+        per immagini più complesse.
+
+Differenze Principali tra Bitmap e Vettoriale
+    Risoluzione: Le bitmap sono risoluzione-dipendenti e perdono qualità con l'ingrandimento,
+     mentre le immagini vettoriali sono risoluzione-indipendenti.
+
+    Applicazioni: Le bitmap sono ideali per fotografie e immagini dettagliate; le immagini vettoriali sono ideali per loghi, icone,
+    illustrazioni tecniche e grafici.
+
+    Spazio di Archiviazione: I file bitmap tendono a essere più grandi, soprattutto senza compressione, mentre i file vettoriali
+    sono generalmente più piccoli e leggeri.
+
+
+#### (Imporante) Processi Coinvolti nella Rappresentazione delle Immagini:
+
+                                        Dalla Discretizzazione alla Digitalizzazione:
+
+    Una volta discretizzata l’immagine in pixel, la digitalizzazione converte ciascun pixel in un valore numerico che il computer può
+    memorizzare e manipolare. Questi valori numerici vengono poi interpretati come colori grazie al sistema RGB.
+
+    Creazione di Bitmap: La discretizzazione di un'immagine produce una bitmap, una rappresentazione digitale in cui ciascun pixel
+    ha una posizione e un colore specifico, successivamente, questa bitmap può essere compressa per ottimizzare lo spazio di archiviazione
+    o la trasmissione.
+
+°Rappresentazione in Vector-Based:
+    Alternativamente, un'immagine può essere rappresentata in grafica vettoriale, dove vengono memorizzate
+    le istruzioni per disegnare l’immagine piuttosto che il colore di ciascun pixel.
+    Questo processo richiede meno memoria, specialmente per immagini che contengono forme semplici e linee nette.
+
+
+°Accesso e Manipolazione dei Pixel in Bitmap In una rappresentazione bitmap:
+    ogni pixel può essere manipolato direttamente.
+    Questo consente di alterare l'immagine a livello di singolo pixel, modificando i valori RGB per cambiare colore o per applicare
+    effetti come oscuramento, schiarimento o applicazione di filtri.
+
+
+
+In conclusione:
+    JPEG è un algoritmo di compressione che trasforma un'immagine in formato discreto (come un bitmap) in un formato compresso,
+    producendo un flusso di bit che rappresenta l'immagine in una sequenza codificata, elaborando i dati a livello di blocco piuttosto che
+    pixel per pixel.
+
+    Un pixel viene rappresentato in RGB che è una tripla di numeri a seconda della quantità passata ad esempio alla funzione
+    setColor per un pixel possiamo ottenere un rosso puro, verde o blu.
+
+Introduzione alle stringhe:
+                                                    ###### Le stringhe #######
+ - Le stringhe in python sono sequenze di caratteri, fanno parte dei tipi immutabili ovvero che non possiamo modificarne il valore assegnato
+  ad una certa variabile se non attraverso l'operatore d'assegnazione, riassegnando un nuovo riferimento o attraverso l'uso della parola global.
+
+    Le stringhe possono essere iterate e possiamo accedere al contenuto come se fossero una lista, sono una lista ma di caratteri,
+    stringa[0], per accedere dinamicamente ai caratteri abbiamo bisogno di un ciclo.
+
+    Vai alla seconda parte della lezione.

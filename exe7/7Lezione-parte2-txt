@@ -1,0 +1,159 @@
+                                                    ###### Le stringhe #######
+
+Una stringa è una sequenza/collezione ordinata di caratteri o elementi posizionali in cui ogni elemento è individuato da un indice,
+partendo da 0 per il primo elemento, la stringa è un tipo di dato primitivo e immutabile ovvero assegnato quel valore alla stringa per
+poter modificarne il contenuto bisogna utilizzare l'operatore di assegnazione, che come sappiamo crea un nuovo riferimento.
+
+    °Dominio Di un dato:
+        Il dominio è un insieme di valori e il dominio di appartenenza di un tipo di dato
+        è l'insieme di tutti i valori che quel tipo può assumere.
+
+    ° Il dominio delle stringhe?
+        Nel caso delle stringhe, il dominio è costituito da tutte le possibili sequenze di caratteri,
+        inclusi lettere, numeri, simboli e caratteri speciali.
+        In altre parole, ogni stringa è una sequenza finita di simboli presi da un determinato alfabeto
+        come l'alfabeto ASCII o Unicode.
+
+    °ASCII e Unicode:
+        I principali domini di riferimento per le stringhe sono ASCII e Unicode
+        la differenza tra i due è abissale.
+        Per convenzione diciamo che i domini di riferimento sono gli alfabeti ovvero Set
+        che definiscono l'insieme di caratteri che possono essere rappresentati in una stringa.
+
+
+
+											####    ASCII    ####
+
+                L'alfabeto ASCII associa ad ogni carattere un numero intero, quindi sostanzialmente ad ogni carattere
+                corrisponde 1 byte rappresenta quindi una certa lettera, simbolo attraverso un numero.
+                - La funzione ord(char) in Python fornisce il valore ASCII di un carattere, ad esempio "A" = 65 nell'alfabeto ASCII,
+                - La funzione chr(int) rappresenta il carattere "A", quindi passando un valore numerico lui stampa il carattere associato.
+
+                Stampare tutti i caratteri in ASCII:
+                    for i in range(0,256):
+                        print i + chr(i) --> vediamo che ad ogni numero corrisponde un certo carattere,simbolo
+
+                    Simboli di backspace:
+                    \n: Rappresenta un "newline", ovvero una nuova riga.
+                    \t: Inserisce una tabulazione orizzontale.
+                    \b: Rappresenta un backspace.
+                    \\: Inserisce un backslash (\).
+
+### Indexing e Slicing: ###
+Poiché una stringa può essere considerata come una sequenza di caratteri, è possibile estrarre singoli caratteri o
+sotto stringhe utilizzando due processi fondamentali l’indicizzazione e lo slicing tramite l'operatore [  ] per accedere a valori.
+
+Proprietà delle stringhe:
+    length --> essendo sequenze hanno una lunghezza
+    Indexing --> gli elementi ovvero i caratteri sono accessibili usando l'operatore [int] passandogli un intero, l'intero dev'essere < della length
+    Slicing --> l'operatore è : ed è possibile definire intervalli per estrarre una parte di stringa:
+                    stringa[start:end] ; end non è compreso
+
+                esempio:    s= "peppe"
+                            subS = s[2:4] --> # pp è eslusco l'end
+
+Membership (in): verifica la presenza di un elemento all'interno della sequenza
+
+                #######  Metodi e funzioni:
+
+Funzioni: Gli operatori in molti linguaggi posso essere richiamati tramite il punto o la dot notation,
+           chi viene richiamato sono i metodi questo è un punto fondamentale che distingue i metodi dalle funzioni,
+           (le funzioni blocchi di codice, le quali sono istruzioni e riutilizzabili per eseguire un operazione specifica).
+           Le funzioni possono essere definite all'esterno di qualsiasi classe e invocate utilizzando il proprio nome.
+
+Metodi:   I metodi, sono simili alle funzioni ma associati agli oggetti e definiscono il comportamento di questi,
+          essendo legati agli oggetti implica che per essere richiamati bisogna utilizzare la dot notation,
+          ricordiamo che i metodi sono legati alle istanze degli oggetti e per accedervi c'è bisogno di creare l'istanza dell'oggetto,
+          in conclusone i metodi possono essere considerati come gli operatori delle classi/oggetti!!!
+          I quali definiscono comportamenti specifici che assume quell'oggetto !!!
+
+° I metodi delle stringhe
+    Le stringhe hanno diversi metodi associati che permettono di manipolare le stringhe come
+    - str(int)      --> trasforma l'intero in una stringa
+    - upper()       --> rende tutta la stringa in maiuscolo,
+    - lower()       --> tutta la stringa in minuscolo,
+    - find("peppe") --> se trova la parola restituisce la posizione della parola,
+            accetta anche due/tre parametri oltre alla stringa quindi,
+      - find(subString, startSearch, endSearch) --> e gli due param sono numeri interi.
+            Se non trova la corrispondenza della sotto stringa restituisce -1.
+            Importante capire che il find oltre ad accettare una sotto stringa accetta anche la posizione di inizio e fine della
+            ricerca della substring.
+
+
+    - capitalize()          --> capitalizza solo la prima parola della sottostringa , - title,
+    - startsWith(string)    --> restituisce true/flase passata come arogmento una stringa, verifica se la frase contiene la sottostringa.
+    - endswith(.estensione) --> controlla l'estensione del file:
+        if filename.endswith(.jpg) fai qualcosa
+
+
+    - isalpha() --> ritorna true se tutte le occorrenze della stringa sono caratteri dell'alfabeto
+    - isdigit() --> ritorna true se nella stringa ci sono numeri
+    - replace() --> rimpiazza TUTTE le sottostringhe con un carattere o sequenza
+        Ma cosa importante può essere utilizzato replace anche per sostituire gli spazi vuoti da una stringa!!!!!!
+            replace(" ","")
+
+### Join e Split
+    - join(s) --> è l'inverso di split, sè split crea una lista di sotto stringhe a partire da una stringa, join unisce in un'unica stringa
+    tutte le stringhe presenti nella lista:
+    Join funzione con liste,tuple
+       s = ["Ciao" ,"mondo", "Python"]
+       " ".join(s) --> "Ciao mondo Python"
+        " " --> delimitatore che viene inserito per ogni elemento
+
+
+    - split() --> viene utilizzato per suddividere una stringa in una lista di sottostringhe,utilizzando un delimitatore specificato.
+    Se non viene fornito alcun delimitatore, il metodo utilizza gli spazi bianchi come predefiniti.
+        s = "ciao mondo!"
+        sSplit = s.split() --> ["ciao","mondo!"]
+
+        Con delimitatore spcificato:
+            Oppure possiamo indicare il delimitatore, che cosa significa, che ogni volta che viene incontrato quel simbolo allora si estrae
+            la sotto stringa.
+            s = "Ciao,mondo,Python"
+            s.split() --> ["Ciao,mondo,Python"]
+            s.split(",") --> ["Ciao" , "mondo" , "Python"]
+            °Punto chiave è che ogni volta che incontra il parametro specificato spezza la stringa e la inserisce nella lista.
+
+
+Possiamo usare join e split insieme ad esempio:
+
+        st = "218423,weruwe212,  123"
+        def clearAplha(st):
+            s = "".join(s.split(" "))   --> questo passaggio restituisce la stringa senza spazi "218423,weruwe212,123"
+            temp = ""
+            for i in st:
+                if not i.isalpha():
+                    temp = temp + i
+            return temp # --> così ritorna: 218423,212,123
+            return "".join(temp.split(",")) --> cosi ritorna 218423212123
+
+            ciò che accade è che join elimina tutti i gli spazi dalla stringa e mentre split elimina la virgola
+
+Introduzione or e and:
+    or associare un elemento a più casi basta che sia verificato una condizione per entrare nel costrutto
+    and usato in contesti in cui abbiamo bisogno che tutte le condizioni siano verificate per poter entrare nel costrutto.
+
+def onlyVowels(s):
+    sequence = ""
+    for i in range(0,len(s)):
+      if((s[i]=="a")or(s[i]=="e")or(s[i]=="i")or(s[i]=="o")or(s[i]=="u")):
+        sequence = sequence +s[i]
+    return sequence
+
+soloVocali = onlyVowels("non ci sono problemi")
+print "solo vocali --> " + soloVocali
+
+
+scrivere una funzione che, data una stringa s,
+restituisce una nuova stringa ottenuta eliminando da
+s tutti i caratteri alfabetici;
+			### Con il FOR: e ### Con il While:
+Il discorso è diverso perché dobbiamo capire come scorre la lista rispetto al while
+while funziona che se la condizione è true lui esegue le istruzioni nel suo corpo.
+Un ciclo infinito è
+
+    while true:
+        print "Mi sto mangiando la RAM"
+
+
+

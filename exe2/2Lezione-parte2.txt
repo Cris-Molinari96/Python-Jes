@@ -1,0 +1,64 @@
+
+	 ** Casi di studio:
+	 * Visualizzare immagini,
+	 Iniziamo la lezione riprenendo il concetto trattato nella precedente ovvero che noi e l'informatica
+	 ci concentra sul risolvere problemi utilizzando approcci sistematici e efficienti.
+	 Per dare astrazioni ai problemi utilizziamo i linguaggi di programmazione i ci permettono di costruire algoritmi
+	 i quali poi vengono tradotti in istruzioni ed eseguite dalla macchina consentendo la manipolazione del problema
+	 e la sua risoluzione.
+	 L'importanza dei linguaggi è che ci permettono di scrivere istruzioni in un linguaggio comprensibile
+	 (o anche detto alto livello, codice Sorgente).
+
+    °Informazione ---> °Dato ---> °Algoritmo(costruito con linguaggio di programmazione per estrarre e manipolare il dato)
+     ----> °Rappresentazione
+
+	 Per ora il nostro problema è capire come visualizzare in modo corretto un immagine magari migliorandone la luminiosità ecc
+
+	 Quindi per capire cosa dobbiamo fare bisogna analizzare il tipo di problema, sempre!
+	 1. Ci serve sapere come è rappresentata un immagine,
+	 2. quali operazioni sono disponibili su immagine(operazioni di base + modi per combinarle tra loro).
+	 3. La struttura della macchina che utilizzeremo, quindi l'architettura interna e il linuguaggio di 7
+	 programmazione che intendiamo usare.
+
+°Pseudocodice è la base per trovare la soluzione ad un problema non legata a nessun tipo di Linguaggio e sintassi:
+	 Possiamo utilizzare un approccio nel dividere il problema in sotto problemi e trovare una soluzione per ciascuno di essi.
+	 Possiamo sfruttare il pseudocodice per aggirare il problema della programmazione e poi trasformare la soluzione in codice
+
+
+	 (Architettura von Neumann: Questa è la base della architettura moderna di un computer è caratterizzata da una
+	 cpu che esegue istruzioni, e Una memoria che immagazzina sia dati che istruzini.
+	 Il processo nel dettaglio vede coinvolti elementi del pc che interagiscono tra di loro
+	 come la Ram che immagazzina dati e istruzioni  temporaneamente, la RAM contiene una copia effettiva del programma che
+	 diventa un processo in esecuzione quando spostato dall'ssd alla RAM e tale area accessibile alla CPU attraverso indirizzi
+	 in memoria poi abbiamo l'Hard disk che memorizza i dati e programmi a lungo termine.
+	 Tutto il processo è da rivedere nel dettaglio, ci sono componenti come i bus che permettono a componenti di scambiarsi le informazioni.
+
+	 Una volta terminato il processo per poter mantere i dati aggiornati c'è bisogno di poter ritornare indietro ovvero salvare
+	 i dati nell'ssd in particolare possiamo dire e specificare che nell'ssd vi si trovano i programmi che non sono in esecuzione.)
+
+°°°Macchina di Von Neumann e confronto con Python:
+	 Proseguendo Nella slide abbiamo visto Python vs Von Neumann e in particolare una macchina python segue l'architettura di
+	 von Neumann abbiamo un Python processor paragonabile alla CPU definita nella macchina di Neumann,
+	 il Python processor è l'interprete Python ovvero un software che legge le istruzi e le esegue direttamente,
+	 l'interprete simula un processore, traducendo ogni riga di codice Python in istruzioni che la macchina reale può capire.
+
+	 ** Differenza rispetto alla CPU: L'interprete Python è più "alto livello" rispetto alla CPU, nel senso che si occupa di
+	 gestire il codice scritto in linguaggi umani (Python) e convertirlo in operazioni che il computer può eseguire.
+
+	 * Una main memory paragonabile alla RAM
+	 * Una secondary memory paragondabile all'ssd, abbiamo un display collegato alla CPU attraverso un bus di sistema il quale
+	 renderizza l'elaborazione della CPU mostrando qualcosa a display.
+	 Usermo nel nostro corso una macchina Python.
+
+    * OPERATORE D'ASSEGNAZIONE Riguardo le variabili per creare una variabile ha una sua importanza l'operatore d'assegnazione
+    ovvero = ciò che accade è che si crea una coppia chiave alla quale appartiene il valore o riferimento alla posizione in memoria
+    dov'è contenuto il valore.
+
+    Continuando con la lezione, parliamo dei file,
+    Un file è una sequenza ordinata di byte che rappresenta dati, quindi è un modo per rappresentare un'informazione?
+    I file vengono memorizzati sul computer è questi possono essere di qualsiasi tipo, quindi immagini, documenti o anche un 7
+    programma tali file sono strutturati come una raccolta di byte e cioè unità digitali al quale viene dato un name.
+
+Richiamiamo concetti spiegati nelle lezioni precedenti:
+    8 bit --> 1 byte --> Unità digitale che può essere rappresentata in qualche modo
+    I file vengono gestiti dal sistema operativo.

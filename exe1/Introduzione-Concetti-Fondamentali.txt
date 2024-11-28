@@ -1,0 +1,199 @@
+Nella lezione si parla di jes, differenza tra dato e informazione, algoritmo, cos'è e a cosa deve rispondere l'informatica,
+la macchina perfetta Von Neuman, bit e byte, codifica e interpretazione.
+
+JES --> è un linguaggio di programmazione Python ha una caratteristica particolare ovvero che è implementato in java di
+fatto il nome Jython, Bisogna stare molto attenti a come si indenta infatti nel corpo di ogni funzione bisogna dare 1 colpi di tab,
+mentre ogni volta che si definisce un for o una condizione nel corpo bisognare dare 1 tab, questo è importante perché il codice viene interpretato
+e letto dall'interprete python che come vedremo nel corso delle lezioni svolge un ruole fondamentale che possiamo per ora distinguere in due fasi:
+compilazione del codice sorgente il quale produce un file compilato .pyc contente bytecode ovvero un formato intermedio che la pvm può tradurre in
+istruzioni macchina, e la seconda fase è proprio la traduzione in istruzioni e date al processore che le eseguirà.
+
+
+1lezione) Concetti fondamentali:
+* Alcune importanti definizioni perse dal mondo anglosassone:
+    la Computer science ovvero la scienza dei computer (e in particolare l'informatica non riguarda solo i computer più di quanto
+l'astronomia non riguarda solo i telescopi.
+
+- In italia l'informatica è definita come la scienza dell'informazione e della rappresentazione attraverso la sua
+elaborazione quello che ci interessa è rappresentare un dato in modo automatico.
+La rappresentazione del dato può essere un problema e l'informatica ne risponde.
+L'obiettivo è risolvere problemi in modi sistematici.
+
+- DATO E INFORMAZIONE:
+In effetti c'è una differenza tra dato e informazione dal punto di vista informatico i due termini hanno un significato diverso:
+			1) Un Dato è un elmento, conosciuto ed elementare, può rappresentare qualsiasi cosa, può essere un numero,
+			un simbolo alfanumerico, un oggetto, quindi come possiamo notare il dato può essere qualsiasi tipo di informazione
+			come caratteri, numeri, dati logici (come i booleani) file audio, pixel suoni.
+
+Il dato è la materia prima da cui i computer estraggono le informazioni che poi devono essere elaborate!
+{ Possiamo aggiungere, in termini di programmazione, un dato può essere anche un array, vettori, liste, insiemi, oggetti(object) }
+Concludendo il dato è un elemento grezzo senza contesto o interpretazione e che da esso è possibile estrarre un informazione la quale dev'essere
+elaborata e interpretata.
+
+
+2) L'informazione è il risultato derivato dalla elaborazione di un dato che permette di venire a conoscenza di qualcosa.
+Senza un dato non ci sarebbero le informazioni.
+
+		In altre parole le informazioni che devono essere rappresentate, risiedono e sono contenute nel dato.
+
+Allora la domanda che ci possiamo porre è come possiamo estrarre le informazioni in modo poi da poterle rappresentare?
+La risposta è Attraverso una serie di passi ben definiti e finiti, che chiamiamo ALGORITMO.
+		(L'agoritmo nasce già nel 300 a.C con l'algoritmo di Euclide.)
+
+* Rappresenetazione dell'informazione Recap:
+       {{* ----- Per fare un recap: dato e informazione sono due concetti distinti:
+	*Il dato si riferisce a un qualsiasi tipo di cosa, è un elemento grezzo senza contesto o rappresentazione come può essere un numero,
+	 un simbolo o caratteri alfanumerici come le stringhe, operatori booleani, array vettori liste e tali dati contengono le informazioni
+	 che devono essere estratte in modo da poter essere poi rappresentate in qualche modo per tanto per estrarre le informazioni dai dati
+	 utilizziamo il termine algoritmo per appunto definire una serie di passi finiti e ben definiti ovvero delle istruzioni
+	 che vengono date alla macchina per estrarre le informazioni dal dato.
+	 I dati vengono raccolti e memorizzati in un data base il quale è un contenitore di dati.
+
+QUANTO DESCRITTO SINO AD ORA vuole introdurre e dare una panoramica per rappresentare la base della scienza della rappresentazione e
+dell' elaborazione (automatica)	dell'informazione.
+**** Infatti i nostri problemi consistono proprio in come rappresentare i dati ovvero recuperare le informazioni attraevrso algoritmi. ****
+
+Proseguendo l'obiettivo è capire come costruire algoritmi efficienti attraverso una serie di istruzioni.
+
+
+Per parlare poi dell'informatica e di come vengono svolte le procedure dalle macchine per risolvere i problemi quindi per procedure
+intendiamo che le macchine eseguono algoritmi per risolvere problemi complessi in modo molto più veloce rispetto agli esseri umani.
+
+- Le macchine eseguono operazioni in modo automatico e programmato, non tutti i problemi possono essere risolti al momento poicè ci sono dei
+limiti nascenti da problemi non computabili.
+
+Un discorso fondamentale è che le macchine non pensano, loro eseguono istruzioni non comprendendone il significato di cosa stanno facendo motivo
+per cui bisogna programmare rappresentazioni astratte dei problemi in modo che attraverso le macchine si possa manipolare il problema
+attraverso procedure predefinite appunto con gli algoritmi.
+La base più importante è proprio questa:
+sviluppare una logica tale da poter creare delle giuste istruzioni e non solo che siano anche efficienti, con il fine di automatizzare un problema.
+
+
+VON NEUMANN:
+Archietettura di Von Neumann introduce il concetto che la CPU esegue operazioni elemenatri come magari l'addizione o confronto ecc..
+su dati i quali vengono archiviati in memoria, la memoria è un altro punto fondamentale di una macchina e ne vediamo di seguito alcune caratteristiche.
+
+		CICLO DI ESECUZIONE DELLA CPU:
+		1. Abbiamo detto che la CPU esegue operazioni elementari, addizione, confronti ecc...
+		2. La CPU comunica con la memoria (anche conosciuta come RAM) e preleva istruzioni che deve decodificare ed eseguire, questo è un
+		ciclo continuo e rappresenta la base del funzionamento 	del computer.
+		La ram non è altro che una sequenza di caselle ognuna con una dimensione di 1 byte identificata da un indririzzo numerico.
+		3. Hard disk anche questo è un componente della memoria e svolge un compito importante ovvero contenere il dato effettivo,
+		come un programma che poi verrà passato alla RAM quando dev'essere eseguito
+		La caratteristica rispetto alla RAM è che l'SSD è molto molto più lento ma molto più capiente.
+		4. Abbiamo poi altri componenti che interagiscono con la cpu come il dispaly, la keyborad, il mouse e periferiche esterne.
+
+		CPU-2
+		Come abbiamo detto la CPU esegue istruzioni e operazioni le quali devono essere decodificate in linguaggio macchina
+		(una sequenza di bit che rappresentano comandi/operazioni specifiche somma, molt. ecc),
+		 ogni cpu è caratterizzata dai suoi propri codici per le operazioni.
+
+		La cpu esegue operazioni di lettura e scrittura specificando l'indirizzo della cella di memoria:
+		 - read: preleva il contenuto dalla cella,
+		 - write: modifica il contenuto di una cella.
+
+		Memoria Ram 1:
+		- La RAM, immagazzina dati e operazioni del programma o dei programmi in esecuzione in un formato binario.
+		- è veloce ma volatile nel senso che allo spegnersi del computer viene liberata
+		- Accesso continuo alla memoria (Random Access)
+		- Maggiore è la memoria RAM più programmi contemporaneamente possono essere gestiti
+
+
+		Memoria 2 Hard Disk o SSD:
+		è molto più capiente, non è volatile e più lento
+
+		Memoria Centrale?
+		La memoria centrale ci riferiamo con un termine generico all'insieme di M celle la CPU comprende diversi tipi di memoria:
+		Come la memoria RAM, ROM, La memoria cache e per ora possiamo dire che include diversi tipi di memoria per l'elaborazione dei dati
+
+		??? Quello che ora mi interessa capire è ___come la memoria centrale gestisce l'"ELABORAZIONE deI DATI" ???
+
+		Ogni elemento binario (perchè la memoria è un componente,elemento binario) che può memorizzare solo due valori 0 e 1.
+		binary digit --> bit Tipicamente la dimensione di ogni cella è di 1 Byte ovvero 8 bit.
+	    Ogni cella ha un indirizzo in memoria: M-0, M-1, M-2 ...
+
+        ** Possiamo dire che la gestione della memoria come interagire con essa allocando e deallocando appunto memoria, viene gestito in maniera
+         automatica dai computer.
+        Quindi non dobbiamo interagire con la memoria binaria, 	grazie a diversi livelli di astrazione come strumenti ad alto livello,
+        i linguaggi di programmazione ad esempio semplificano la gestione dei dati (traducono le istruzioni che vogliamo dare alla macchina in un
+        determinato formato comprensibile dalla macchina la quale poi elabora le istruzioni).
+
+        La struttura di un computer possiamo dire che è stratificata su diversi livelli a livelo più basso troviamo l'hardware, nel mezzo il software
+        di sistema(Sistema operativo), e livello più alto il software applicativo (ovvero i programmi) tutti i livelli interagiscono tra di loro.
+
+	Cosi come avviene la decodifica in linguaggio macchina, per rappresentare le informazioni avviene la codifica
+	e sappiamo che i computer memorizzano dati binari ovvero sequenze di 0 e 1, queste sequenze devono poi essere codificate per essere
+	rappresentate correttamente, in numeri, testo ecc e per tanto, ad esempio, abbiamo  la codifica ASCII la quale rappresenta i caratteri
+	alfanumerici, il confronto avviene sul simbolo il quale è associato ad una sequenza, esempio a = 00001.
+
+	Passiamo ai linguaggi di programmazione i quali permettono di codificare algoritmi e istruzioni, i linguaggi variano tra di loro, ovvero ne
+	esistono di diversi tipi ma tutti convergono con lo stesso obiettivo, ovvero comunicare con la macchina per farla eseguire istruzioni.
+
+	Intelligenza Artificiale breve cenno:
+	L'informatica allora si occupa della rappresentazione e dell'elaborazione dell'informazione, ma l'intelligenza è un campo che va oltre il
+	 semplice trasferimento di informazioni.
+
+Bit e Byte Unità di misura e concetti fondamentali!
+
+        *** Concetto chiave codifica: ***
+        Possiamo interpretare gli 0 e 1 nella memoria del computer in qualunque modo vogliamo.
+        Possiamo trattarli come semplici numeri o CODIFICARE INFORMAZIONI in quei numeri.
+        Questa è la stessa idea che i computer "comprendono" i 	numeri è un interpretazione quello che avviene è che noi codifichiamo il
+        voltaggio su dei fili come 0 e 1, 8 di questi fili costituiscono 1 Byte
+        che, a sua volta, possiamo interpretare come un numero decimale.
+    	 * */
+
+        Un computer non "comprende" i numeri o i dati nello stesso modo in cui lo fanno gli esseri umani.
+        Per lui, tutto si riduce a segnali elettrici (o in altri casi, ottici o magnetici) che vengono rappresentati come stati binari,
+        cioè due stati possibili: 0 e 1.
+
+        Questi stati sono il risultato di un processo fisico di codifica dei segnali elettrici, generalmente attraverso un'alta o bassa tensione su un filo.
+
+        Codifica del voltaggio come 0 e 1:
+        I computer utilizzano bit (binary digits) per rappresentare tutte le informazioni.
+        Un bit può essere 0 o 1! , e ciò è dovuto alla struttura fisica dei circuiti elettronici, dove:
+            0 rappresenta l'assenza di tensione (o bassa tensione)
+            1 rappresenta la presenza di tensione (o alta tensione)
+        Quindi, il computer non "vede" realmente i numeri, ma piuttosto interpreta il flusso di corrente elettrica nei suoi circuiti come una
+        sequenza di 0 e 1. Questo sistema di rappresentazione si chiama codifica binaria.
+
+        1 Byte: possiamo vederli come "Otto fili"per definire un'unità di informazione
+        Un singolo bit è l'unità più piccola di informazione, ma per poter rappresentare qualcosa di più complesso (come numeri o caratteri),
+        i computer raggruppano i bit in byte, dove un byte è composto da 8 bit.
+
+        Per esempio, una sequenza di 8 bit potrebbe essere: 01001010. Questa sequenza può essere interpretata in vari modi:
+        Se trattata come un numero binario, rappresenta il valore 74 nel sistema decimale. Se interpretata come codice ASCII, rappresenta il carattere "J".
+        Questo dimostra come la stessa sequenza di bit possa avere significati diversi a seconda del contesto in cui viene interpretata.
+
+Interpretazione dei dati:
+    La parte cruciale di questa idea è che noi, come programmatori o ingegneri, decidiamo il significato da assegnare a una
+    determinata sequenza di bit, QUESTO MOTIVO DETERMINA CHE IN UNA SEQUENZA DI BIT POSSIAMO CODIFICARE QUALSIASI INFORMAZIONE:
+    Potremmo decidere di interpretare una sequenza come un numero intero, potremmo interpretarla come un carattere alfabetico o persino una
+    porzione di un'immagine digitale.
+    Il computer, in sé, non "sa" quale sia il significato di quella sequenza; segue semplicemente le istruzioni date dagli algoritmi
+    che ci consentono di manipolare e interpretare i bit in modi specifici.
+    Questo processo di astrazione è ciò che rende possibile lavorare con dati complessi, a partire da una rappresentazione binaria semplice di 0 e 1.
+
+
+Esempio: Da voltaggio a numero decimale
+    Immaginiamo che otto fili di un circuito elettronico trasportino ciascuno uno di questi due valori (alta o bassa tensione, 0 o 1).
+    Se osserviamo lo stato di questi otto fili simultaneamente e leggiamo i valori come una sequenza di bit,
+    possiamo tradurre quella sequenza in un numero decimale, utilizzando il sistema di numerazione binario.
+
+    Ad esempio:
+    La sequenza 01001010 corrisponde al numero decimale 74, perché:
+    0×2⁷ + 1×2⁶ + 0×2⁵ + 0×2⁴ + 1×2³ + 0×2² + 1×2¹ + 0×2⁰ = 74
+    In altre parole, ciò che fisicamente è solo uno stato elettrico (voltaggio) su dei fili diventa,
+    attraverso un processo di codifica e interpretazione, un'informazione significativa come un numero, una lettera o un colore.
+
+    Concludendo diciamo che i Bit sono:
+    I bit oltre ad essere l'unità di misura digitale più piccola sono rappresentazioni di segnali elettrici, codificati come 0 e 1.
+    Un gruppo di 8 bit costituisce un Byte, che può essere interpretato come un numero, un carattere, o altre informazioni.
+    L'interpretazione della sequenza di bit dipende dal contesto e dalle istruzioni del programma.
+    Il computer esegue le operazioni sui bit in modo automatico, ma l'interpretazione del significato finale dipende dalle decisioni prese
+    nel software e nel sistema che lo governa.
+
+
+Possiamo dire che la macchina esegue istruzioni, le istruzioni sono algoritmi i quali vengono trasformati in una sequenza di bit
+sappiamo che attraverso le sequenze possiamo dire e codificare qualsiasi informazione la quale verrà tradotta in istruzione ed
+eseguita e interpretata dalla macchina.
