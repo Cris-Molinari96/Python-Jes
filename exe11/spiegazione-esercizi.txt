@@ -1,0 +1,71 @@
+Esercizio 1
+    • Scrivere su un file 'proverbio.txt' un proverbio a scelta
+    • Aprire il file proverbio.txt
+    • Leggerne tutto il contenuto
+    • Scrivere i caratteri in posizione pari su un file 'propari.txt'
+    • Scrivere i caratteri in posizione dispari su un file 'prodisp.txt'
+    • Suggerimento: Questa volta leggete TUTTO il file e poi…
+
+Come risolverlo:
+    1. Per scrivere su un file dobbiamo ottenere la sua istanza attraverso la funzione open(path,mod).
+    2. A questo punto si deve invocare il metodo definito nella classe TextIOWrapper ovvero write( ) e passare al metodo la stringa in questo caso il proverbio da inserire nel file.
+    3. Per leggere tutto il contenuto dobbiamo aprire il file nella modalità read, è consigliato definire una funzione che legga il contenuto del file.
+    4. Iterare sui occorrenze della linea utilizzando un indice.
+    5. Imporre una condizione sull'indicie quand'è pari scrivi il carattere line[i] nel file pari altrimenti lo scrivi sul file dispari
+    6. Per completare l'esercizio bisogna chiudere le connessioni aperte
+
+    metodi usati:
+        - open()
+        - write()
+        - close()
+
+
+        Considera questo:
+
+            file = open(path,"r")
+            for line in file:                                           --> #   { In questo modo otteniamo tutte le righe del file, ogni iterazione
+                for i in range(0,len(line)):                               rappresenta il contenuto della riga letta che è una stringa ecco perché possiamo continuare ad iterare la stringa
+                    char = line[i]                                                     accedendo al singolo carattere. }
+
+
+
+Esercizio 2
+    • Usando la funzione di sistema input:
+    • Apra un file in scrittura
+    • Fino a che l'utente non scrive la parola 'fine'
+    • Leggere una serie di parole da input
+    • Scrivere su un file la parola inserita
+    • Chiudere il file
+
+          Osservazioni: se si tenta di utilizzare la funzione input, se la stringa continene lettere si tenta di chiamare una variabile con il valore
+                                                passato alla funzione per risolvere bisogna usare raw_input()
+
+         * La traccia è chiara si necessita di un while e un check su una stringa dove ogni ripetizione il contenuto passato in input è memorizzato
+             in una variabile e la condizione del while è impostata se la stringa è != a 'fine'.
+
+                       s = ""
+                       while s =! 'fine':
+                        s = raw_input("inserire del testo ")
+                        if s != 'fine':
+                            file.write(str(s))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Creare una struttura colonne e righe
+ list = [
+    ["\tparola1\t", "parola2\t", "parola3\n"],
+    ["\tparola1\t", "parola2\t", "parola10\n"],
+    ["\tparola1\t", "parola2\t", "parola3"],
+    ]
+

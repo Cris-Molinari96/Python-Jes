@@ -4,19 +4,19 @@ Vuole chiarire ogni dubbio su come si accedere a parti dell'immagine
 
                    per dividere l'immagine verticalemente in due parti
                                 usiamo la fuzione getWidth(p)/2
-                     _________________________________________   X
-                    |0                  50                100 |  --> per Accedere all'ultimo valore della
-                    |                                         |      riga usiamo la funzione getWidth(p)-1
-                    |                                         |
-                    |                                         |
-                    |                                         |
-per dividere        |50                                       |
-orizzontalmente     |                                         |
-l'immagine usiamo   |                                         |
-la fuzione          |                                         |
-getHeight(p)/2      |                                     100 | --> per accere all'utlimo valore della colonna
-                    |_________________________________________|     usiamo la funzione getHeight(p)-1
-                   Y
+                                                     _________________________________________   X
+                                                    |0                                      50                               99|  --> per Accedere all'ultimo valore della
+                                                    |                                                                                  |           riga usiamo la funzione getWidth(p)-1
+                                                    |                                                                                  |
+                                                    |                                                                                  |
+                                                    |                                                                                  |
+Per dividere                            |                                                                                   |50
+orizzontalmente                    |                                                                                  |
+l'immagine usiamo                |                                                                                  |
+la fuzione                                 |                                                                                  |
+getHeight(p)/2                      |                                                                            99 |      | --> per accere all'utlimo valore della colonna
+                                                    |_________________________________________|     usiamo la funzione getHeight(p)-1
+                                                   Y
 
                    °accedi alla prima colonna quindi x = 0 getWidth(pic)
                    °accedi alla prima riga quindi y = 0 getHeight(pic)

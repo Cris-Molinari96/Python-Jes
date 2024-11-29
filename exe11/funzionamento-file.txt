@@ -1,0 +1,8 @@
+Rispetto alla lezione 11 abbiamo detto che possiamo ottenere un istanza del file a partire dalla funzione open() che a seconda della modalità scelta
+restituisce un bufferReader o bufferWriter attraverso cui poi possiamo richiamare e usare i metodi definiti nella classe TextIOWrapper
+
+Ciò che accade è questo:
+    file = open(path,modalità )  --> Viene aperta una connessione con il file e ciò che ritorna è un istanza di tipo File ed è solo ora che è possibile leggere o scrivere
+    readFile = file.write("Ciao Mondo Python!")
+
+    Possiamo leggere dal file e ciò che accade è che ogni riga letta viene restituita una stringa, da qui eventualmente possiamo lavorare sulla stringa.

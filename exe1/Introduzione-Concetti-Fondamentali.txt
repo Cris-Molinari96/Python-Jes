@@ -2,7 +2,11 @@ Nella lezione si parla di jes, differenza tra dato e informazione, algoritmo, co
 la macchina perfetta Von Neuman, bit e byte, codifica e interpretazione.
 
 JES --> è un linguaggio di programmazione Python ha una caratteristica particolare ovvero che è implementato in java di
-fatto il nome Jython, Bisogna stare molto attenti a come si indenta infatti nel corpo di ogni funzione bisogna dare 1 colpi di tab,
+fatto il nome Jython e utilizza una libreria specifica Media per manipolare le immagini, il codice per manipolare le immagini funziona solo su l'ide JES se si vuole utilizzare lo stesso codice
+ in altre ide bisogna scaricarsi la libreria Pillow che rende disponibili alcune funzioni ma non tutte.
+
+
+Bisogna stare molto attenti a come si indenta infatti nel corpo di ogni funzione bisogna dare 1 colpi di tab,
 mentre ogni volta che si definisce un for o una condizione nel corpo bisognare dare 1 tab, questo è importante perché il codice viene interpretato
 e letto dall'interprete python che come vedremo nel corso delle lezioni svolge un ruole fondamentale che possiamo per ora distinguere in due fasi:
 compilazione del codice sorgente il quale produce un file compilato .pyc contente bytecode ovvero un formato intermedio che la pvm può tradurre in

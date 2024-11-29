@@ -16,12 +16,12 @@
 
                                         La xG andarà tra un range di 0 e n, n è l'ultimo valore di x e l'utilo valore di y
                                   ____________________________
-                                 |0                           |
-                                 |                            |
-                                 |                            |
-                                 |                            |
-                                 |                            |
-                                 |                            |
+                                 |0                                                      |
+                                 |                                                        |
+                                 |                                                        |
+                                 |                                                        |
+                                 |                                                        |
+                                 |                                                        |
                                  |____________________________|
 
                                   Immagine più grande:
