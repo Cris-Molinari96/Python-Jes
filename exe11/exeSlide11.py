@@ -40,7 +40,7 @@ def writeOnFile(path,st, mode="w"):
 
 #@param path: String
 #@param pathPari: String
-#@param pathDisp:  String
+#@param pathDisp:  String 
 def readAndWriteOnFile(path,pathPari,pathDisp):
     file = open(path,"r")
     pari = open(pathPari,"w")
@@ -73,3 +73,49 @@ def readAndWriteOnFile(path,pathPari,pathDisp):
     file.close()
 
 # myInput(path)
+
+
+# La funzione,  a partire da un filepath che viene come parametro, apre una connessione con il file in modalità di default(lettura/read)
+# inizializza una lista che conterrà il contenuto del file
+# strip() elimina righe vuote dal file restituendo tutto il contenuto
+# split(",") restituisce per ogni linea una  lista contente il contenuto delle singole linee, ogni volta che termina una riga inserisce il contenuto nella lista
+    # la lista è cosi formata per ogni linea lista_splittata = [contenuto_1_riga] , [contenuto_2_riga] e cosi via....
+    # Importante notare che split retituisce listE di stringhe
+# Infatti per mantenere la coerenza del file (già sappiamo la struttura del file ovvero che i primi 4 elementi sono n reali )
+    # allora definiamo una logica che permetta di aggiornare il contenuto della lista splittata quindi della linea in un numero che essendo
+    # decimale viene invocata la funzione float
+#La funzione restituisce il contenuto delle linee mantenedo la coerenza con numeri e stringhe
+def getIris(pathfile):
+#@param pathfile: str
+    f = open(pathfile)
+    list = []
+
+    for line in f:
+      l = line.strip()
+      s = l.split(",")
+      for i in range(4):
+        s[i] = float(s[i])
+      list.append(s)
+    print list
+    return list
+getIris(iris)
+
+# La funzione prende in ingresso la lista precedentemente lavorata, la specie del fiore e un attributo per restituire una media finale
+# La logica che ci interessa è calcolare la media:
+# 1. per poterlo fare dobbiamo essere in grado di accedere alla lista e filtrarla secondo il parametro specie
+# 2. accededere all'attributo che ci interessa recuperandone il valore per ogni fiore e memorizzando
+    # la somma in una variabile temporanea chiamata nel file tempMedia
+#3. ritornare la media
+def average(dataset, specie, attributo):
+#@param dataset: List
+#@param specie: Stringa
+#@param attributo: int
+#@ return float
+    counterIris = 0
+    j = attributo
+    tempMedia = 0
+    for s in dataset:
+      if s[4] == specie:
+        tempMedia += s[j]
+        counterIris +=1
+    return tempMedia

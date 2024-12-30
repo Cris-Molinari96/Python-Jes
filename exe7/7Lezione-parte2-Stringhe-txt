@@ -101,14 +101,14 @@ Metodi:   I metodi, sono simili alle funzioni ma associati agli oggetti e defini
         " " --> delimitatore che viene inserito per ogni elemento
 
 
-    - split() --> viene utilizzato per suddividere una stringa in una lista di sottostringhe,utilizzando un delimitatore specificato.
+    - split() --> videne utilizzato per suddividere una stringa in una lista di sottostringhe, utilizzando un delimitatore specificato.
     Se non viene fornito alcun delimitatore, il metodo utilizza gli spazi bianchi come predefiniti.
         s = "ciao mondo!"
         sSplit = s.split() --> ["ciao","mondo!"]
 
         Con delimitatore spcificato:
             Oppure possiamo indicare il delimitatore, che cosa significa, che ogni volta che viene incontrato quel simbolo allora si estrae
-            la sotto stringa.
+            la sotto stringa e viene inserita nella lista .
             s = "Ciao,mondo,Python"
             s.split() --> ["Ciao,mondo,Python"]
             s.split(",") --> ["Ciao" , "mondo" , "Python"]
@@ -127,7 +127,14 @@ Possiamo usare join e split insieme ad esempio:
             return temp # --> così ritorna: 218423,212,123
             return "".join(temp.split(",")) --> cosi ritorna 218423212123
 
-            ciò che accade è che join elimina tutti i gli spazi dalla stringa e mentre split elimina la virgola
+            ciò che accade è che join elimina tutti i gli spazi dalla stringa e mentre split elimina la virgola, accade questo perché stiamo dicendo a join "" di eliminare tutti gli spazi
+            sè avessi scritto " ".join avremmo ottenuto la stringa con spazi.
+                Un osservazione su join() e slpit():
+                    se usati insieme e abbiamo una stringa con diversi tab, spazi allora ciò che possiamo fare per riportarla in un formato coerente è:
+                        s = "Ciao       mondo           Python! "
+                        " ".join(s.split()) --> split crea questa lista ["Ciao","Mondo","Python"]
+                                                                 e join inserisce dopo ogni elmento della lista uno spazio ritornando la stringa --> Ciao Mondo Python
+
 
 Introduzione or e and:
     or associare un elemento a più casi basta che sia verificato una condizione per entrare nel costrutto

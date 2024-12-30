@@ -74,6 +74,14 @@ sviluppare una logica tale da poter creare delle giuste istruzioni e non solo ch
 
 
 VON NEUMANN:
+Per prima cosa cerchiamo di dare una definizione di computer:
+    Un computer è un dispositivo elettronico digitale che esegue istruzioni in un formato speficico ovvero il formato binario,
+    anche sè ciò che possiamo fare con un computer comprende una serie molto più ampia di compiti ma tutto si basa sull'esecuzione di ISTRUZIONI.
+
+La macchina di Von Neumann definisce il funzionamento di un computer attraverso 3 componenti principali CPU, Ram, SSD.
+La sequenza di istruzioni è un programma che in fase di esecuzione viene spostato dall'SSD nella RAM a cui ha accesso la CPU, questa leggendo nella RAM ha accesso
+alle istruzioni del programma.
+
 Archietettura di Von Neumann introduce il concetto che la CPU esegue operazioni elemenatri come magari l'addizione o confronto ecc..
 su dati i quali vengono archiviati in memoria, la memoria è un altro punto fondamentale di una macchina e ne vediamo di seguito alcune caratteristiche.
 

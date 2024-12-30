@@ -1,5 +1,5 @@
 °°° La lezione 11 è centrata sui file, dalla tipologia di file e come effettuare operazioni di lettura, scrittura.
-        Vengono introdotto funzioni specifiche per lavorare con i file come open(), write() che verranno trattate in questo file.
+        Vengono introdotte funzioni specifiche per lavorare con i file come open(), write() che verranno trattate in questo file.
         Nel corso delle varie lezioni veranno fatti solo riferimenti a tipi != di file testuali come i file binari ma non saranno trattati nello specifico al momento.
 
 
@@ -10,11 +10,11 @@ ___Da leggere: per aprire correttamente un file ed evitare errori di escape usa 
         - Cos'è un file? Nient'altro che un contenitore di informazioni, una sequenza di dati posizionati su linee.
             Tipologie di file:
                 # File Binari (video, immagini, suoni, dati ....)
-                # File estuali (HTML, csv, JSON .....)
+                # File testuali (HTML, csv, JSON .....)
 
 _Funzionamento:
     La classe astratta TextIOBase viene implementata in TextIOWrapper che eredita e fornisce i metodi per operare con i file,
-    operare con file è possibile solo se otteniamo un istanza del file, l'istanza del file l'ottieni con la funzione open() che restituisce che a seconda della modalità:
+    operare con file è possibile solo se otteniamo un istanza del file, l'istanza del file l'ottieni con la funzione open() che restituisce a seconda della modalità passata alla funzione.
 
      Python ha un tipo dati file con cui è in grado di:
                 - Creare
@@ -26,7 +26,7 @@ _Funzionamento:
         Lettura, scrittura, modifica.
 
             Un file può essere aperto attraverso la funzione
-            open("percorso",modalità) e accetta due parametri,
+            open("percorso", "modalità" ) e accetta due parametri,
                 1. Il percorso del file
                 2. La modalità, ci sono tre modalità diverse:
                     -"r"     per leggere che sta per read.
@@ -34,18 +34,19 @@ _Funzionamento:
                     - "a"     per la sola modifica del file
 
             La funzione open() fà si che viene inizializzata una variabile di tipo FILE!
-                Cosa succede internamente? accade che Python apre una connessione con il file.
-                    ° La sintassi è la seguente:
-                            read-file           =  open("D:/.../.../name-file.txt", "r")                   --> per aprire un file in lettura
-                            write-on-file   = open("D:/.../.../name-file.txt", "w")                  --> per aprire un file in scrittura
-                            modify-file       = open(D:/.../.../name-file.txt", "a")                    --> similmente ma per modificarne il contenuto
+                Cosa succede internamente? accade che Python apre una connessione con il file che resterà aperta per tutta la durata, infatti poi dovremmo chiudere
+                la connessione per salvare le modifiche nel caso di write, ma è buona pratica chiudere anche in fase di lettura.
+                    ° Le sintassi sono le seguenti:
+                            -read-file           =  open("D:/.../.../name-file.txt", "r")                   --> per aprire un file in lettura
+                            -write-on-file   = open("D:/.../.../name-file.txt", "w")                  --> per aprire un file in scrittura
+                            -modify-file       = open(D:/.../.../name-file.txt", "a")                    --> similmente ma per modificarne il contenuto
                                 A cui si può aggiungere alla mode
                                         "b" per file binari:
                                             read-file = open("D:/.../.../name-file.txt", "rb")                   --> per leggere su file binari
                                             read-file = open("D:/.../.../name-file.txt", "wb")                   --> per aprire in mod scrittura file binari
                                         "t" per file di testo (c'è di default)
 
-                Chiusra della connessione con il metodo close().
+                Chiusura della connessione con il metodo close().
 
     Vogliamo concentrarci su operazioni di Lettura e scrittura.
         Metodi in Lettura:
@@ -53,7 +54,21 @@ _Funzionamento:
             file.read(n)        --> legge n caratteri a partire dall'inizio del file
 
                 In lettura possono esserci utili anche i metodi per lavorare con le stringhe:
-                    line.strip()    --> per eliminare gli spazi tra una linea e l'altra
+                    line.strip()    --> per eliminare gli spazi tra una linea e l'altra esempio
+
+                    File text:
+
+                        Le bugie hanno le gambe corte. Le menzogne si scoprono subito, hanno le gambe corte e non possono andare lontano.
+
+                        Le bugie hanno le gambe corte. Le menzogne si scoprono subito, hanno le gambe corte e non possono andare lontano.
+
+                        Le bugie hanno le gambe corte. Le menzogne si scoprono subito, hanno le gambe corte e non possono andare lontano.
+
+                Con strip():
+                Le bugie hanno le gambe corte. Le menzogne si scoprono subito, hanno le gambe corte e non possono andare lontano.
+                Le bugie hanno le gambe corte. Le menzogne si scoprono subito, hanno le gambe corte e non possono andare lontano.
+                Le bugie hanno le gambe corte. Le menzogne si scoprono subito, hanno le gambe corte e non possono andare lontano.
+
 
 
 
@@ -62,10 +77,3 @@ _Funzionamento:
                 - Iterare su un file vale a dire ottenere tutte le righe del file, ciasuna riga è una stringa.
                 - Python e in generale altri linguaggi leggono riga per riga (riga = linea) dove ogni iterazione restituisce la riga letta inserendo tutte le occorrenze di quella
                     riga in una stringa.
-
-
-
-
-
-
-
