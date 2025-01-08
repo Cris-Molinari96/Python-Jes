@@ -102,10 +102,11 @@ Tutti i metodi elencati sono accessibili con la dot notation.
 Sono tutti metodi della classe Sequence.
 
 ** reverse()    --> modifica invertendo l'ordine degli elementi nella lista.
-** extend()     --> funziona un pò come append se utilizzato in questo modo l.extend(["peppe","franco"])
+** extend()     --> funziona un pò come append a differenza che aggiunge alla lista più di 1 elemento
+                    se utilizzato in questo modo l.extend(["peppe","franco"])
                     altrimenti se usato in questo modo aggiunge singoli caratteri ("franco")
                     e senza la square brackets non funzionerà con elementi diversi da una sequenza.
-                    extend inoltre aggiunge l'elemento alla lista accodandolo a tutti quelli già presenti.
+                    extend inoltre aggiunge gli elementi alla lista accodandolo a tutti quelli già presenti.
 
 ** append()     --> per aggiungere qualsiasi cosa alla lista accodandola a tutti gli elementi già presenti.
 ** count()      --> conta il numero di occorrenze su una sequenza come una stringa:

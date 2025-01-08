@@ -62,7 +62,7 @@ def readAndWriteOnFile(path,pathPari,pathDisp):
 
 
 # Esercizio 2, spiegazione nel file esercizi
-#@param path : String
+# @param path : String
  def myInput(path):
     file = open(path,"w")
     s = ""
@@ -96,7 +96,7 @@ def getIris(pathfile):
       for i in range(4):
         s[i] = float(s[i])
       list.append(s)
-    print list
+    print(list)
     return list
 getIris(iris)
 

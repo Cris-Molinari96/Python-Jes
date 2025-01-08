@@ -1,3 +1,6 @@
+Non usare il cervello per immagazzinare cose ma bensi per ragionare, pensare e questa la base della programmazione, saper pensare sviluppando
+una serie di passi per risolvere il problema.
+
 Nella lezione si parla di jes, differenza tra dato e informazione, algoritmo, cos'è e a cosa deve rispondere l'informatica,
 la macchina perfetta Von Neuman, bit e byte, codifica e interpretazione.
 
