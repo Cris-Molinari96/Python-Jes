@@ -1,7 +1,8 @@
 import random
- # L'opzione 1 è quella più dinamica, permette di generare una password sulla base di due domande:
- # inserisci la lunghezza della password che vuoi ottenere
- # inserisci il numero di simboli che vuoi ottenere
+ # L'opzione 1 è quella più randomica, permette di generare una password sulla base di tre domande:
+ # Inserisci la lunghezza della password che vuoi ottenere
+ # Inserisci il numero di simboli che vuoi ottenere
+ # Inserisci il numero di numeri che vuoi ottenere
 
 LETTERS = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
 NUMBERS = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
@@ -10,21 +11,24 @@ ALL_LIST = [LETTERS, NUMBERS, SYMBOLS]
 
 # Option1
 def main():
-    LEN_PASSWORD = int(input("Insert you length password_list\n"))
+    LEN_PASSWORD = int(input("Insert you length fianl password\n"))
     NUMBER_SYMBOL = int(input("How many symbol do you want?\n"))
+    NUMBER_NUMBER = int(input("How many number do you want?\n"))
+
     password_list = []
-    counter = 0
+    counter_symbols = 0
+    counter_number = 0
 
     while len(password_list) < LEN_PASSWORD:
         # Per ogni volta che viene generato un numero randomico
         n_random = random.randint(0,2)
 
         if n_random == 2:
-            if counter < NUMBER_SYMBOL:
+            if counter_symbols < NUMBER_SYMBOL:
                 x_list = ALL_LIST[n_random]
                 char = x_list[random.randint(0,len(x_list)-1)]
                 password_list.append(char)
-                counter +=1
+                counter_symbols +=1
             else:
                 x_list = ALL_LIST[random.randint(0,1)]
                 char = x_list[random.randint(0,len(x_list)-1)]
@@ -34,12 +38,38 @@ def main():
             char = x_list[random.randint(0,len(x_list)-1)]
             password_list.append(char)
 
-#   non devo cambiare tutti gli elementi della lista ma solo
     for i in range(len(password_list)):
-        if password_list[i].isalpha() or password_list[i].isdigit():
-            while counter < NUMBER_SYMBOL:
-                password_list[i] = ALL_LIST[2][random.randint(0, len(SYMBOLS) - 1)]
-                counter +=1
+        if password_list[i].isdigit():
+            counter_number +=1
+
+# A questo punto abbiamo la lista che contiene la password, appare in questo modo ['2','!','a' .... ]
+    # Ora vogliamo controllare quanti numeri e quanti simboli ci sono
+    n = 0
+    while counter_symbols < NUMBER_SYMBOL:
+        if password_list[n].isalpha():
+            password_list[n] = ALL_LIST[2][random.randint(0, len(SYMBOLS)-1)]
+            counter_symbols +=1
+            n+=1
+        else:
+            n+=1
+    n=0
+    while counter_number < NUMBER_NUMBER:
+       if password_list[n].isalpha():
+            password_list[n] = LETTERS[random.randint(0,len(LETTERS)-1)]
+            counter_number +=1
+            n+=1
+       else:
+           n+=1
+    n=0
+    while counter_number > NUMBER_NUMBER:
+        if password_list[n].isdigit():
+            password_list[n] = LETTERS[random.randint(0,len(LETTERS)-1)]
+            counter_number -=1
+            n +=1
+        else:
+            n+=1
+# non devo cambiare tutti gli elementi della lista ma solo quelli necessari affichè ci sono il numero di simboli richiesti
+
 
     password = ""
     for c in password_list:
