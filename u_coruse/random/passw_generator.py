@@ -11,7 +11,7 @@ ALL_LIST = [LETTERS, NUMBERS, SYMBOLS]
 # Option1
 def main():
     LEN_PASSWORD = int(input("Insert you length password_list\n"))
-    NUMBER_SYMBOL = int(input("How much symbol do you want?\n"))
+    NUMBER_SYMBOL = int(input("How many symbol do you want?\n"))
     password_list = []
     counter = 0
 
