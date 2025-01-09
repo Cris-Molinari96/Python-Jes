@@ -1,4 +1,5 @@
 import random
+
  # L'opzione 1 è quella più randomica, permette di generare una password sulla base di tre domande:
  # Inserisci la lunghezza della password che vuoi ottenere
  # Inserisci il numero di simboli che vuoi ottenere
@@ -44,7 +45,7 @@ def main():
 
 # A questo punto abbiamo la lista che contiene la password, appare in questo modo ['2','!','a' .... ]
     # Ora vogliamo controllare quanti numeri e quanti simboli ci sono
-    n = 0
+    n=0
     while counter_symbols < NUMBER_SYMBOL:
         if password_list[n].isalpha():
             password_list[n] = ALL_LIST[2][random.randint(0, len(SYMBOLS)-1)]
@@ -74,6 +75,7 @@ def main():
     password = ""
     for c in password_list:
         password += c
+
     return password
 
 print(main())
@@ -101,9 +103,7 @@ def main2():
 # Per poter creare un generatore ranodmico di password su caratteri e simbolo indicati dobbiamo seguire una serie di passi:
 # L'obiettivo è ottenere la lunghezza della password desiderata e ottenere caratteri o simboli che si vogliono nella password.
 # legth password e i simboli ora qui dobbiamo prevedere che i simboli che si vogliano inserire nella pass, non superino la lunghezza finale della password
-
-
-def main2():
+def main3():
     char_list = []
     start = True
     LEN_PASSWORD = ""
@@ -130,15 +130,14 @@ def main2():
 #            print("You can't insert another char,symbol!")
 #            start = true
     print(f"Generazione della password {char_list}")
-    password_generator2(char_list,LEN_PASSWORD)
+    password_generator3(char_list,LEN_PASSWORD)
 
-def password_generator2(char_list: list,LEN_PASSWORD:int):
+def password_generator3(char_list: list,LEN_PASSWORD:int):
     temp_list = []
     password = ""
     while len(password) < LEN_PASSWORD:
         char = char_list[random.randint(0,len(char_list)-1)]
         password += char
         print(password)
-
-#main2()
+#main3()
 
