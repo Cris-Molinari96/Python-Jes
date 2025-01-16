@@ -1,5 +1,7 @@
 import random
 
+
+
 print(""
      " _\n"
      "| |\n"
@@ -11,19 +13,19 @@ print(""
      "                  |___/" )
 
 
-list_words = ["Ingegneria", "Analisi", "Geometria"]
+list_words = ["Ingegneria", "Analisi", "Geometria" "Lampada", "Mare", "Nebbia",
+              "Strada", "Albero", "Montagna", "Orologio", "Stella", "Fiore",
+              "Luce","Sole", "Vento", "Acqua", "Terra", "Cielo","Fiume", "Foresta",
+              "Pietra", "Nuvola", "Fuoco", "Raggio", "Cristallo", "Isola", "Riva", "Sabbia",
+              "Lago", "Vetta", "Deserto", "Ghiaccio", "Nebbia"]
 
-
-
-#print(f"{underscore},   {word}")
-#input("inserisci una lettera")
-
-# Devo sfruttare una lista temporanea.
-# quindi
-
+# Viene estratta una parola dalla lista in modo casuale,
+# Abbiamo una lista temporanea che contiene n _ quanta è la lenght della parola estratta
+# Il while rappresenta il cuore del gioco interrpoendosi quando termini le vite o quando indovini la parola
+#
 def main():
     life = 10
-    word = list_words[random.randint(0, len(list_words) - 1)]
+    word = list_words[random.randint(0, len(list_words) - 1)].lower()
     temp_list_contain_char_and_underscore = []
     you_lose=False
 
@@ -32,8 +34,7 @@ def main():
 
 
     while (life > 0) and ("".join(temp_list_contain_char_and_underscore) != word):
-        #print(f"Hai {life} vite,\nparola da indovinare --> {underscore}")
-        print(f"Hai {life} vite,\nparola da indovinare --> {"".join(temp_list_contain_char_and_underscore)}")
+        print(f"Hai {life} vite,\nparola da indovinare --> {"".join(temp_list_contain_char_and_underscore).capitalize()}")
         char = input("Inserisci un carattere! :)\n")
         x = check_char(word,char)
         if x[0] == False:
@@ -49,11 +50,13 @@ def main():
                 temp_list_contain_char_and_underscore[n] = char
 
     if you_lose == True:
-        print("You lose!!")
+        print(f"You lose!! La parola era: {word.capitalize()}")
     else:
-        print(f"You win!! the word is{word}")
+        print(f"You win!! the word is: {word.capitalize()}")
 
-
+# Il metodo controlla se il carattere inserito è contenuto nella parola
+# @param word: String, @param char: String
+# @return tupla
 def check_char(word:str, char):
     # la lista conterrà gli indici delle lettere indovinate
     # le lettere che sono state indovinate allora devono comparire a schermo nella posizione indicata
